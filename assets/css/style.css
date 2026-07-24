@@ -18,18 +18,11 @@ body {
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 30px;
-}
-
 /* Шапка */
 .site-header-custom {
-    padding: 20px 0;
+    padding: 20px 40px;
     position: relative;
     z-index: 10;
-    background-color: transparent;
 }
 
 .header-flex {
@@ -71,37 +64,28 @@ body {
     color: var(--text-dark);
 }
 
-/* Главный экран с точным позиционированием */
-.hero-section-fixed {
+/* Главный экран: картинка ставится на фон, текст сдвигается направо */
+.hero-bg-section {
+    width: 100%;
+    min-height: 80vh;
+    background-image: url('../fon.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
     position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    line-height: 0; /* Убираем отступы под картинкой */
-}
-
-.bg-image-fixed {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Текстовый блок поверх картинки */
-.hero-content-fixed {
-    position: absolute;
-    top: 0;
-    right: 0; /* Прижимаем к правому краю */
-    width: 48%; /* Занимает ровно белое поле справа */
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Вертикальное центрирование текста */
-    padding: 40px 60px;
-    line-height: 1.4;
+    align-items: center;
+}
+
+/* Контейнер для текста справа */
+.hero-content-box {
+    margin-left: 52%;
+    padding: 40px;
+    max-width: 650px;
 }
 
 .main-title {
-    font-size: 80px;
+    font-size: 82px;
     font-family: serif;
     color: var(--mint-primary);
     font-weight: normal;
@@ -112,7 +96,7 @@ body {
 .main-subtitle {
     font-size: 19px;
     color: #555;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .subtitle-line {

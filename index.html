@@ -71,24 +71,24 @@
             color: var(--text-dark);
         }
 
-        /* Главный экран: картинка-фон слева */
+        /* ФОН НА ВСЮ СТРАНИЦУ: растягиваем на 100% ширины и высоты экрана */
         .hero-bg-section {
-            width: 100%;
-            min-height: 85vh;
-            /* Картинка лежит прямо в корне */
+            width: 100vw;
+            height: calc(100vh - 80px);
             background-image: url('fon.png');
-            background-size: contain;
-            background-position: left top;
+            background-size: 100% 100%; /* Растягивает картинку точно на всю ширину и высоту */
+            background-position: center;
             background-repeat: no-repeat;
             position: relative;
             display: flex;
             align-items: center;
         }
 
+        /* Контейнер текста аккуратно накладывается на правую белую часть */
         .hero-content-box {
-            margin-left: 52%;
-            padding: 20px 40px;
-            max-width: 650px;
+            position: absolute;
+            right: 8%; /* Точная привязка к правой части */
+            max-width: 600px;
         }
 
         .main-title {
@@ -127,16 +127,17 @@
         }
 
         .animated-logo-container {
-            width: 85px;
-            height: 85px;
+            width: 90px;
+            height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+        /* Настройка видео-анимации */
         .dancing-logo {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
 
@@ -191,8 +192,8 @@
 
             <div class="action-card">
                 <div class="animated-logo-container">
-                    <!-- Гифка лежит прямо в корне рядом с index.html -->
-                    <img src="logoanime.gif" alt="Танцующий логотип" class="dancing-logo">
+                    <!-- Подключаем видеоформат .mp4 с автозапуском -->
+                    <video src="logoanime.mp4" autoplay loop muted playsinline class="dancing-logo"></video>
                 </div>
                 <a href="earth-club/index.html" class="btn-club">ВСТУПИТЬ В КЛУБ</a>
             </div>

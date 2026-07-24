@@ -3,89 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Виртуальная биологическая академия</title>
+    <title>Земляне — Виртуальная биологическая академия</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- Шапка сайта (Навигация и поиск) -->
-    <header class="site-header">
-        <div class="container header-container">
-            <div class="logo">
-                <span class="logo-icon">🌿</span>
-                <a href="index.html" class="logo-text">БиоАкадемия</a>
-            </div>
-            
-            <!-- Навигационное меню -->
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Главная</a></li>
-                    <li><a href="about.html">Об академии</a></li>
-                    <li><a href="lessons/index.html">Уроки</a></li>
-                    <li><a href="news/index.html">Новости</a></li>
-                    <li><a href="earth-club/index.html">Клуб «Земляне»</a></li>
-                    <li><a href="projects/index.html">Проекты</a></li>
-                </ul>
+    <!-- Шапка сайта по вашему макету -->
+    <header class="site-header-custom">
+        <div class="container header-flex">
+            <nav class="main-nav-custom">
+                <a href="index.html" class="nav-btn active">Главная</a>
+                <a href="about.html" class="nav-btn">о нас</a>
+                <a href="lessons/index.html" class="nav-btn accent-lessons">УРОКИ</a>
+                <a href="news/index.html" class="nav-btn">новости</a>
+                <a href="projects/index.html" class="nav-btn">достижения</a>
             </nav>
-
-            <!-- Поисковая строка -->
-            <div class="search-box">
-                <input type="text" id="site-search" placeholder="Поиск по урокам и темам...">
-            </div>
         </div>
     </header>
 
-    <!-- Первый экран (Главный блок) -->
-    <section class="hero">
-        <div class="container hero-content">
-            <span class="badge">Добро пожаловать в науку</span>
-            <h1>Наша суперсила — в знаниях и их применении</h1>
-            <p>Интерактивный путеводитель по биологии, где теория оживает в лабораториях, экологических проектах и реальных открытиях.</p>
-            <div class="hero-buttons">
-                <a href="lessons/index.html" class="btn btn-primary">Перейти к урокам</a>
-                <a href="earth-club/index.html" class="btn btn-outline">Вступить в клуб «Земляне»</a>
+    <!-- Главный экран (Hero) по дизайну -->
+    <section class="hero-custom">
+        <div class="container hero-layout">
+            
+            <!-- Левая колонка: картинка с полкой/окном кабинета -->
+            <div class="hero-image-box">
+                <!-- Здесь будет фоновое изображение кабинета из стилей -->
             </div>
+
+            <!-- Правая колонка: текст, иконки, видео и кнопка -->
+            <div class="hero-text-box">
+                <h1 class="main-title">Земляне</h1>
+                <p class="main-subtitle">Наша суперсила — в знаниях и их применении</p>
+                <div class="subtitle-line"></div>
+
+                <!-- Иконки-акценты -->
+                <div class="hero-icons">
+                    <span>🌿</span>
+                    <span>🔬</span>
+                    <span>🔍</span>
+                    <span>🌍</span>
+                    <span>🌱</span>
+                </div>
+
+                <!-- Блок с анимированным логотипом и кнопкой -->
+                <div class="action-card">
+                    <!-- Сюда вы загрузите ваше видео/гифку с танцующим человечком -->
+                    <div class="animated-logo-container">
+                        <!-- Пример тега для видео (замените video.mp4 на имя вашего файла, если загрузите его в проект) -->
+                        <video src="assets/images/human.mp4" autoplay loop muted playsinline class="dancing-logo"></video>
+                        <!-- Или если это картинка/gif: <img src="assets/images/human.gif" alt="Логотип" class="dancing-logo"> -->
+                    </div>
+                    
+                    <a href="earth-club/index.html" class="btn-club">ВСТУПИТЬ В КЛУБ</a>
+                </div>
+            </div>
+
         </div>
     </section>
-
-    <!-- Основные разделы сайта (Быстрый доступ) -->
-    <section class="sections-grid container">
-        <h2>Направления академии</h2>
-        <div class="grid-container">
-            <a href="lessons/index.html" class="card">
-                <div class="card-icon">🔬</div>
-                <h3>Уроки и науки</h3>
-                <p>От цитологии и ботаники до генетики и экологии.</p>
-            </a>
-            <a href="about.html" class="card">
-                <div class="card-icon">👩‍🏫</div>
-                <h3>Руководитель</h3>
-                <p>Информация об авторе проекта и методиках обучения.</p>
-            </a>
-            <a href="earth-club/index.html" class="card">
-                <div class="card-icon">🌍</div>
-                <h3>Клуб «Земляне»</h3>
-                <p>Экологический мониторинг, экспедиции и защита природы.</p>
-            </a>
-            <a href="projects/index.html" class="card">
-                <div class="card-icon">💡</div>
-                <h3>Проекты</h3>
-                <p>Исследовательские работы учеников и научные инициативы.</p>
-            </a>
-            <a href="news/index.html" class="card">
-                <div class="card-icon">📢</div>
-                <h3>Новости и успехи</h3>
-                <p>Достижения на олимпиадах, объявления и события.</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- Подвал сайта -->
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 Виртуальная биологическая академия. Создано для уроков биологии.</p>
-        </div>
-    </footer>
 
 </body>
 </html>

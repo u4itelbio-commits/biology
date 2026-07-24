@@ -15,17 +15,20 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-dark);
+    overflow-x: hidden;
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1350px;
     margin: 0 auto;
     padding: 0 30px;
 }
 
-/* Шапка */
+/* Шапка сайта */
 .site-header-custom {
-    padding: 25px 0;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
 }
 
 .header-flex {
@@ -67,71 +70,81 @@ body {
     color: var(--text-dark);
 }
 
-/* Главный экран */
-.hero-custom {
-    padding: 40px 0;
+/* Главный блок с точным наложением поверх вашей картинки */
+.hero-section {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.hero-layout {
+.hero-bg-container {
+    width: 100%;
+    line-height: 0;
+}
+
+.bg-image-real {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Располагаем текст поверх белой правой части вашего макета */
+.hero-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    gap: 50px;
     align-items: center;
 }
 
-/* Левая часть — окно с полкой (можно будет добавить картинку через фоновый рисунок) */
-.hero-image-box {
-    flex: 1;
-    height: 600px;
-    background: #e5eee8; /* Временный фон, сюда подставим вашу картинку окна */
-    border-radius: 12px;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Правая часть — текст и элементы */
-.hero-text-box {
-    flex: 1.2;
+.hero-text-inner {
+    margin-left: 51%; /* Четко попадает на белое поле вашего дизайна */
+    padding-right: 40px;
+    width: 48%;
 }
 
 .main-title {
-    font-size: 84px;
+    font-size: 82px;
     font-family: serif;
     color: var(--mint-primary);
     font-weight: normal;
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .main-subtitle {
     font-size: 20px;
     color: #555;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .subtitle-line {
-    width: 120px;
+    width: 110px;
     height: 2px;
     background-color: var(--pink-accent);
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .hero-icons {
     display: flex;
-    gap: 25px;
+    gap: 22px;
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
 }
 
-/* Блок с анимированным человечком и кнопкой */
+/* Блок с танцующим человечком (logoanime.gif) и кнопкой */
 .action-card {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 25px;
 }
 
 .animated-logo-container {
-    width: 100px;
-    height: 100px;
+    width: 85px;
+    height: 85px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,7 +159,7 @@ body {
 .btn-club {
     background-color: var(--pink-accent);
     color: white;
-    padding: 15px 35px;
+    padding: 14px 32px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;

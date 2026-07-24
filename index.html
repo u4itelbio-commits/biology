@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Шапка сайта по вашему макету -->
+    <!-- Шапка сайта -->
     <header class="site-header-custom">
         <div class="container header-flex">
             <nav class="main-nav-custom">
@@ -21,17 +21,16 @@
         </div>
     </header>
 
-    <!-- Главный экран (Hero) по дизайну -->
-    <section class="hero-custom">
-        <div class="container hero-layout">
-            
-            <!-- Левая колонка: картинка с полкой/окном кабинета -->
-            <div class="hero-image-box">
-                <!-- Здесь будет фоновое изображение кабинета из стилей -->
-            </div>
+    <!-- Главный экран с фоном-картинкой и текстом поверх -->
+    <section class="hero-section">
+        <!-- Картинка фона вставляется тегом, чтобы она всегда сохраняла пропорции макета -->
+        <div class="hero-bg-container">
+            <img src="assets/images/fon.png" alt="Фон академии" class="bg-image-real">
+        </div>
 
-            <!-- Правая колонка: текст, иконки, видео и кнопка -->
-            <div class="hero-text-box">
+        <!-- Текстовое содержимое и элементы поверх картинки -->
+        <div class="hero-content-overlay">
+            <div class="hero-text-inner">
                 <h1 class="main-title">Земляне</h1>
                 <p class="main-subtitle">Наша суперсила — в знаниях и их применении</p>
                 <div class="subtitle-line"></div>
@@ -45,16 +44,14 @@
                     <span>🌱</span>
                 </div>
 
-                <!-- Блок с анимированным логотипом и кнопкой -->
-                <div class="animated-logo-container">
-    <img src="assets/images/fon.png" style="display:none;"> <!-- просто для примера пути -->
-    <img src="assets/images/human.gif" alt="logoanime.gif" class="dancing-logo">
-</div>
-                    
+                <!-- Блок с танцующим логотипом и кнопкой -->
+                <div class="action-card">
+                    <div class="animated-logo-container">
+                        <img src="assets/images/logoanime.gif" alt="Танцующий логотип" class="dancing-logo">
+                    </div>
                     <a href="earth-club/index.html" class="btn-club">ВСТУПИТЬ В КЛУБ</a>
                 </div>
             </div>
-
         </div>
     </section>
 

@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Шапка */
+/* Шапка сайта: меню по центру */
 .site-header-custom {
     padding: 20px 40px;
     position: relative;
@@ -27,7 +27,7 @@ body {
 
 .header-flex {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .main-nav-custom {
@@ -64,24 +64,28 @@ body {
     color: var(--text-dark);
 }
 
-/* Главный экран: картинка ставится на фон, текст сдвигается направо */
+/* Главный экран: фоновый webp-файл и центрирование контента */
 .hero-bg-section {
     width: 100%;
-    min-height: 100vh;
-    background-image: url('../fon.jpg');
+    min-height: calc(100vh - 80px);
+    background-image: url('fon.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-/* Контейнер для текста справа */
+/* Контейнер текста по центру */
 .hero-content-box {
-    margin-left: 52%;
-    padding: 40px;
-    max-width: 650px;
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-title {
@@ -111,26 +115,27 @@ body {
     gap: 25px;
     font-size: 24px;
     margin-bottom: 30px;
+    justify-content: center;
 }
 
-/* Блок с анимацией и кнопкой */
 .action-card {
     display: flex;
     align-items: center;
     gap: 30px;
+    justify-content: center;
 }
 
 .animated-logo-container {
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .dancing-logo {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -145,6 +150,7 @@ body {
     letter-spacing: 1px;
     box-shadow: 0 4px 10px rgba(176, 104, 115, 0.3);
     transition: transform 0.2s;
+    display: inline-block;
 }
 
 .btn-club:hover {

@@ -66,7 +66,7 @@ body {
 
 /* Главный экран: картинка ставится на фон, текст сдвигается направо */
 .hero-bg-section {
-    width: 100%;
+    width: 80%;
     min-height: 80vh;
     background-image: url('../fon.png');
     background-size: cover;

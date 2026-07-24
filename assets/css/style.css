@@ -1,158 +1,571 @@
-:root {
-    --bg-color: #fcfbf9;
-    --mint-primary: #769e88;
-    --pink-accent: #b06873;
-    --text-dark: #3a4740;
+/* ===================================================
+   КЛУБ "ЗЕМЛЯНЕ"
+   style.css
+=================================================== */
+
+/* ---------- СБРОС ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-dark);
-    overflow-x: hidden;
+body{
+
+    font-family:'Montserrat',sans-serif;
+
+    overflow-x:hidden;
+
+    background:#ffffff;
+
+    color:#284437;
+
 }
 
-/* Шапка сайта: меню по центру */
-.site-header-custom {
-    padding: 20px 40px;
-    position: relative;
-    z-index: 10;
+/* ---------- ФОН ---------- */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,.10),
+        rgba(255,255,255,.20)
+    ),
+    url("../images/background.webp");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    z-index:-10;
+
 }
 
-.header-flex {
-    display: flex;
-    justify-content: center;
+/* ---------- HEADER ---------- */
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:500;
+
+    padding:18px 0;
+
 }
 
-.main-nav-custom {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+/* ---------- MENU ---------- */
+
+nav{
+
+    width:min(1400px,92%);
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 30px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.22);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+
+    0 8px 30px rgba(0,0,0,.08);
+
 }
 
-.nav-btn {
-    text-decoration: none;
-    color: #8c9892;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: lowercase;
-    transition: color 0.3s;
+/* ---------- НАЗВАНИЕ ---------- */
+
+.logoText{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    color:#557d68;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
 }
 
-.nav-btn.active {
-    background-color: var(--mint-primary);
-    color: white;
-    padding: 8px 18px;
-    border-radius: 20px;
-    text-transform: none;
+/* ---------- СПИСОК ---------- */
+
+nav ul{
+
+    display:flex;
+
+    gap:42px;
+
+    list-style:none;
+
 }
 
-.nav-btn.accent-lessons {
-    color: var(--pink-accent);
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 17px;
+nav a{
+
+    text-decoration:none;
+
+    color:#365444;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    position:relative;
+
 }
 
-.nav-btn:hover {
-    color: var(--text-dark);
+/* ---------- ПОДЧЕРКИВАНИЕ ---------- */
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:2px;
+
+    background:#67967f;
+
+    transition:.35s;
+
 }
 
-/* Главный экран: фоновый webp-файл и центрирование контента */
-.hero-bg-section {
-    width: 100%;
-    min-height: calc(100vh - 80px);
-    background-image: url('fon.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+nav a:hover{
+
+    color:#67967f;
+
 }
 
-/* Контейнер текста по центру */
-.hero-content-box {
-    text-align: center;
-    max-width: 700px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+nav a:hover::after{
+
+    width:100%;
+
 }
 
-.main-title {
-    font-size: 82px;
-    font-family: serif;
-    color: var(--mint-primary);
-    font-weight: normal;
-    line-height: 1;
-    margin-bottom: 10px;
+/* ---------- HERO ---------- */
+
+.hero{
+
+    height:100vh;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    padding-right:8%;
+
 }
 
-.main-subtitle {
-    font-size: 19px;
-    color: #555;
-    margin-bottom: 15px;
+/* ---------- СТЕКЛЯННАЯ КАРТОЧКА ---------- */
+
+.glassCard{
+
+    width:520px;
+
+    padding:55px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.12);
+
 }
 
-.subtitle-line {
-    width: 110px;
-    height: 2px;
-    background-color: var(--pink-accent);
-    margin-bottom: 25px;
+/* ---------- ЗАГОЛОВОК ---------- */
+
+.glassCard h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:78px;
+
+    color:#4c715e;
+
+    margin-bottom:20px;
+
 }
 
-.hero-icons {
-    display: flex;
-    gap: 25px;
-    font-size: 24px;
-    margin-bottom: 30px;
-    justify-content: center;
+/* ---------- ТЕКСТ ---------- */
+
+.glassCard p{
+
+    font-size:27px;
+
+    line-height:1.5;
+
+    color:#355242;
+
+    margin-bottom:40px;
+
+}
+/*==================================================
+КНОПКА
+==================================================*/
+
+.buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
 }
 
-.action-card {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    justify-content: center;
+.joinButton{
+
+    display:inline-block;
+
+    padding:18px 42px;
+
+    border-radius:60px;
+
+    background:#b05b6f;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 25px rgba(176,91,111,.35);
+
 }
 
-.animated-logo-container {
-    width: 90px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.joinButton:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    background:#9d4a5d;
+
+    box-shadow:
+    0 18px 40px rgba(176,91,111,.45);
+
 }
 
-.dancing-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+/*==================================================
+LOGO
+==================================================*/
+
+.logoBlock{
+
+    position:absolute;
+
+    right:60px;
+
+    bottom:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    animation:logoFade 2s ease forwards;
+
+    opacity:0;
+
 }
 
-.btn-club {
-    background-color: var(--pink-accent);
-    color: white;
-    padding: 15px 35px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(176, 104, 115, 0.3);
-    transition: transform 0.2s;
-    display: inline-block;
+.clubLogo{
+
+    width:180px;
+
+    height:auto;
+
+    filter:drop-shadow(0 8px 20px rgba(0,0,0,.2));
+
 }
 
-.btn-club:hover {
-    transform: translateY(-2px);
+/*==================================================
+ПОЯВЛЕНИЕ ЛОГОТИПА
+==================================================*/
+
+@keyframes logoFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+/*==================================================
+ЛИСТЬЯ
+==================================================*/
+
+.leaf{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:20;
+
+    transform-origin:bottom center;
+
+}
+
+.leaf1{
+
+    width:170px;
+
+    top:40px;
+
+    left:20px;
+
+    animation:leafMove1 6s ease-in-out infinite;
+
+}
+
+.leaf2{
+
+    width:130px;
+
+    right:20px;
+
+    top:220px;
+
+    animation:leafMove2 7s ease-in-out infinite;
+
+}
+
+.leaf3{
+
+    width:150px;
+
+    bottom:30px;
+
+    left:60px;
+
+    animation:leafMove3 8s ease-in-out infinite;
+
+}
+
+@keyframes leafMove1{
+
+0%{transform:rotate(-2deg);}
+50%{transform:rotate(3deg);}
+100%{transform:rotate(-2deg);}
+
+}
+
+@keyframes leafMove2{
+
+0%{transform:rotate(2deg);}
+50%{transform:rotate(-3deg);}
+100%{transform:rotate(2deg);}
+
+}
+
+@keyframes leafMove3{
+
+0%{transform:rotate(-1deg);}
+50%{transform:rotate(2deg);}
+100%{transform:rotate(-1deg);}
+
+}
+
+/*==================================================
+ПЧЕЛА
+==================================================*/
+
+.bee{
+
+    position:fixed;
+
+    width:65px;
+
+    left:-120px;
+
+    top:45%;
+
+    z-index:50;
+
+    animation:beeFlight 22s linear infinite;
+
+}
+
+@keyframes beeFlight{
+
+0%{
+
+left:-120px;
+top:52%;
+transform:rotate(8deg);
+
+}
+
+15%{
+
+top:43%;
+
+}
+
+30%{
+
+top:58%;
+
+}
+
+45%{
+
+top:38%;
+
+}
+
+60%{
+
+top:55%;
+
+}
+
+75%{
+
+top:42%;
+
+}
+
+100%{
+
+left:110%;
+top:50%;
+transform:rotate(-8deg);
+
+}
+
+}
+
+/*==================================================
+SCROLL
+==================================================*/
+
+.scroll{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    font-size:34px;
+
+    animation:scroll 2s infinite;
+
+}
+
+@keyframes scroll{
+
+0%{
+
+transform:
+translate(-50%,0);
+
+}
+
+50%{
+
+transform:
+translate(-50%,10px);
+
+}
+
+100%{
+
+transform:
+translate(-50%,0);
+
+}
+
+}
+
+/*==================================================
+FOOTER
+==================================================*/
+
+footer{
+
+    position:fixed;
+
+    bottom:10px;
+
+    left:25px;
+
+    color:white;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+    text-shadow:0 2px 5px rgba(0,0,0,.35);
+
 }

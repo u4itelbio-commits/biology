@@ -1,207 +1,187 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Земляне — Виртуальная биологическая академия</title>
-    <style>
-        :root {
-            --mint-primary: #769e88;
-            --pink-accent: #b06873;
-            --text-dark: #3a4740;
-        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        body {
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
+    <title>Земляне | Клуб исследователей природы</title>
 
-        /* Главный экран на всю высоту экрана с единым фоном */
-        .hero-bg-section {
-            width: 100%;
-            min-height: 100vh;
-            background-image: url('fon.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Распределяем шапку вверх, а контент вниз */
-            padding: 20px 40px 40px 40px;
-            position: relative;
-        }
+    <meta name="description"
+          content="Клуб Земляне. Биология, исследования, уроки, проекты, открытия.">
 
-        /* Шапка сайта поверх фона */
-        .site-header-custom {
-            width: 100%;
-            z-index: 10;
-        }
+    <link rel="icon"
+          href="images/favicon.png">
 
-        .header-flex {
-            display: flex;
-            justify-content: center;
-        }
+    <!-- Google Fonts -->
 
-        .main-nav-custom {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-        .nav-btn {
-            text-decoration: none;
-            color: #7c8882;
-            font-size: 16px;
-            font-weight: 500;
-            text-transform: lowercase;
-            transition: color 0.3s;
-        }
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-        .nav-btn.active {
-            background-color: var(--mint-primary);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 20px;
-            text-transform: none;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
 
-        .nav-btn.accent-lessons {
-            color: var(--pink-accent);
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 17px;
-        }
+    <link rel="stylesheet"
+          href="css/style.css">
 
-        .nav-btn:hover {
-            color: var(--text-dark);
-        }
-
-        /* Контейнер для текста, смещенный вправо */
-        .hero-content-box {
-            max-width: 650px;
-            margin-left: 45%; /* Сдвигаем весь блок правее */
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Выравниваем всё по левому краю внутри блока */
-        }
-
-        .main-title {
-            font-size: 72px;
-            font-family: serif;
-            color: var(--mint-primary);
-            font-weight: normal;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-
-        .main-subtitle {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .subtitle-line {
-            width: 110px;
-            height: 2px;
-            background-color: var(--pink-accent);
-            margin-bottom: 25px;
-        }
-
-        .hero-icons {
-            display: flex;
-            gap: 25px;
-            font-size: 24px;
-            margin-bottom: 35px;
-        }
-
-        /* Строка с анимацией и кнопкой в правом нижнем углу */
-        .action-card {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Раскидываем анимацию и кнопку по краям */
-        }
-
-        .animated-logo-container {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .dancing-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .btn-club {
-            background-color: var(--pink-accent);
-            color: white;
-            padding: 14px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(176, 104, 115, 0.3);
-            transition: transform 0.2s;
-        }
-
-        .btn-club:hover {
-            transform: translateY(-2px);
-        }
-    </style>
 </head>
+
 <body>
 
-    <!-- Главный экран, объединяющий фон, шапку и контент -->
-    <section class="hero-bg-section">
-        <!-- Шапка сайта -->
-        <header class="site-header-custom">
-            <div class="header-flex">
-                <nav class="main-nav-custom">
-                    <a href="index.html" class="nav-btn active">Главная</a>
-                    <a href="about.html" class="nav-btn">о нас</a>
-                    <a href="lessons/index.html" class="nav-btn accent-lessons">УРОКИ</a>
-                    <a href="news/index.html" class="nav-btn">новости</a>
-                    <a href="projects/index.html" class="nav-btn">достижения</a>
-                </nav>
-            </div>
-        </header>
+<!--======================
+BACKGROUND
+=======================-->
 
-        <!-- Центральный контент -->
-        <div class="hero-content-box">
-            <h1 class="main-title">Земляне</h1>
-            <p class="main-subtitle">Наша суперсила — в знаниях и их применении</p>
-            <div class="subtitle-line"></div>
+<div class="background"></div>
 
-            <div class="hero-icons">
-                <span>🌿</span>
-                <span>🔬</span>
-                <span>🔍</span>
-                <span>🌍</span>
-                <span>🌱</span>
-            </div>
 
-            <div class="action-card">
-                <div class="animated-logo-container">
-                    <!-- Убедитесь, что файл logoanime.mp4 загружен в корневую папку -->
-                    <video src="logoanime.mp4" autoplay loop muted playsinline class="dancing-logo"></video>
-                </div>
-                <a href="earth-club/index.html" class="btn-club">ВСТУПИТЬ В КЛУБ</a>
-            </div>
-        </div>
-    </section>
+
+<!--======================
+LEAVES
+=======================-->
+
+<img src="images/leaf1.png"
+     class="leaf leaf1"
+     alt="">
+
+<img src="images/leaf2.png"
+     class="leaf leaf2"
+     alt="">
+
+<img src="images/leaf1.png"
+     class="leaf leaf3"
+     alt="">
+
+
+
+<!--======================
+BEE
+=======================-->
+
+<img src="images/bee.svg"
+     class="bee"
+     alt="Пчела">
+
+
+
+<!--======================
+HEADER
+=======================-->
+
+<header>
+
+<nav>
+
+<div class="logoText">
+
+Земляне
+
+</div>
+
+<ul>
+
+<li><a href="#">Главная</a></li>
+
+<li><a href="about.html">О нас</a></li>
+
+<li><a href="lessons.html">Уроки</a></li>
+
+<li><a href="news.html">Новости</a></li>
+
+<li><a href="achievements.html">Достижения</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<!--======================
+MAIN SCREEN
+=======================-->
+
+<section class="hero">
+
+<div class="glassCard">
+
+<h1>
+
+Земляне
+
+</h1>
+
+<p>
+
+Наша суперсила —
+в знаниях и их применении
+
+</p>
+
+<div class="buttons">
+
+<a href="#"
+
+class="joinButton">
+
+ВСТУПИТЬ В КЛУБ
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="logoBlock">
+
+<img src="images/logo.gif"
+
+alt="Логотип клуба"
+
+class="clubLogo">
+
+</div>
+
+</section>
+
+
+
+<!--======================
+SCROLL ICON
+=======================-->
+
+<div class="scroll">
+
+↓
+
+</div>
+
+
+
+<!--======================
+FOOTER
+=======================-->
+
+<footer>
+
+© 2026 Клуб "Земляне"
+
+</footer>
+
+
+
+<script src="js/script.js"></script>
 
 </body>
+
 </html>

@@ -68,7 +68,7 @@ body {
 .hero-bg-section {
     width: 100%;
     min-height: 80vh;
-    background-image: url('../fon.png');
+    background-image: url('../fon');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

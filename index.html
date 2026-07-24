@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Земляне — Виртуальная биологическая академия</title>
     <style>
-        /* Встроенные стили, чтобы дизайн гарантированно применился сразу без ошибок путей */
         :root {
             --bg-color: #fcfbf9;
             --mint-primary: #769e88;
@@ -72,13 +71,14 @@
             color: var(--text-dark);
         }
 
-        /* Главный экран с фоном */
+        /* Главный экран: картинка-фон слева */
         .hero-bg-section {
             width: 100%;
-            min-height: 80vh;
+            min-height: 85vh;
+            /* Картинка лежит прямо в корне */
             background-image: url('fon.png');
-            background-size: cover;
-            background-position: left center;
+            background-size: contain;
+            background-position: left top;
             background-repeat: no-repeat;
             position: relative;
             display: flex;
@@ -87,7 +87,7 @@
 
         .hero-content-box {
             margin-left: 52%;
-            padding: 40px;
+            padding: 20px 40px;
             max-width: 650px;
         }
 
@@ -191,7 +191,8 @@
 
             <div class="action-card">
                 <div class="animated-logo-container">
-                    <img src="ресурсы/ изображения/logoanime.gif" alt="Танцующий логотип" class="dancing-logo">
+                    <!-- Гифка лежит прямо в корне рядом с index.html -->
+                    <img src="logoanime.gif" alt="Танцующий логотип" class="dancing-logo">
                 </div>
                 <a href="earth-club/index.html" class="btn-club">ВСТУПИТЬ В КЛУБ</a>
             </div>

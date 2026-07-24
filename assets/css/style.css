@@ -1,11 +1,8 @@
-/* Основные переменные и цвета вашего кабинета */
 :root {
-    --bg-color: #ffffff;
-    --mint-primary: #7bc4a5;
-    --mint-light: #eaf4f0;
-    --pink-accent: #d47a86;
-    --text-color: #2c3e50;
-    --gray-bg: #f8f9fa;
+    --bg-color: #fcfbf9;
+    --mint-primary: #769e88;
+    --pink-accent: #b06873;
+    --text-dark: #3a4740;
 }
 
 * {
@@ -17,189 +14,148 @@
 
 body {
     background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    color: var(--text-dark);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
-/* Шапка сайта */
-.site-header {
-    background-color: var(--bg-color);
-    border-bottom: 2px solid var(--mint-light);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Шапка */
+.site-header-custom {
+    padding: 25px 0;
 }
 
-.header-container {
+.header-flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+}
+
+.main-nav-custom {
+    display: flex;
+    gap: 30px;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-text {
-    font-size: 22px;
-    font-weight: bold;
-    color: var(--text-color);
+.nav-btn {
     text-decoration: none;
-}
-
-.main-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: var(--text-color);
+    color: #8c9892;
+    font-size: 16px;
     font-weight: 500;
+    text-transform: lowercase;
     transition: color 0.3s;
 }
 
-.main-nav a:hover, .main-nav a.active {
-    color: var(--mint-primary);
-}
-
-.search-box input {
-    padding: 8px 15px;
-    border: 1px solid var(--mint-primary);
+.nav-btn.active {
+    background-color: var(--mint-primary);
+    color: white;
+    padding: 8px 20px;
     border-radius: 20px;
-    outline: none;
-    font-size: 14px;
-    width: 200px;
+    text-transform: none;
 }
 
-/* Первый экран (Hero) */
-.hero {
-    background-color: var(--mint-light);
-    padding: 80px 0;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.badge {
-    background-color: var(--pink-accent);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.hero h1 {
-    font-size: 38px;
-    margin: 20px 0;
-    color: var(--text-color);
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn {
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
+.nav-btn.accent-lessons {
+    color: var(--pink-accent);
     font-weight: bold;
-    transition: transform 0.2s;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
-.btn-primary {
-    background-color: var(--pink-accent);
-    color: white;
+.nav-btn:hover {
+    color: var(--text-dark);
 }
 
-.btn-outline {
-    border: 2px solid var(--mint-primary);
-    color: var(--text-color);
+/* Главный экран */
+.hero-custom {
+    padding: 40px 0;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
+.hero-layout {
+    display: flex;
+    gap: 50px;
+    align-items: center;
 }
 
-/* Сетка разделов */
-.sections-grid {
-    padding: 60px 0;
-}
-
-.sections-grid h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 28px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: var(--gray-bg);
-    border: 1px solid var(--mint-light);
+/* Левая часть — окно с полкой (можно будет добавить картинку через фоновый рисунок) */
+.hero-image-box {
+    flex: 1;
+    height: 600px;
+    background: #e5eee8; /* Временный фон, сюда подставим вашу картинку окна */
     border-radius: 12px;
-    padding: 30px 20px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: all 0.3s;
+    background-size: cover;
+    background-position: center;
 }
 
-.card:hover {
-    border-color: var(--mint-primary);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(123, 196, 165, 0.2);
+/* Правая часть — текст и элементы */
+.hero-text-box {
+    flex: 1.2;
 }
 
-.card-icon {
-    font-size: 40px;
+.main-title {
+    font-size: 84px;
+    font-family: serif;
+    color: var(--mint-primary);
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.main-subtitle {
+    font-size: 20px;
+    color: #555;
     margin-bottom: 15px;
 }
 
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
+.subtitle-line {
+    width: 120px;
+    height: 2px;
+    background-color: var(--pink-accent);
+    margin-bottom: 25px;
 }
 
-.card p {
-    font-size: 14px;
-    color: #666;
+.hero-icons {
+    display: flex;
+    gap: 25px;
+    font-size: 24px;
+    margin-bottom: 40px;
 }
 
-/* Подвал */
-.site-footer {
-    background-color: var(--text-color);
+/* Блок с анимированным человечком и кнопкой */
+.action-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.animated-logo-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dancing-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.btn-club {
+    background-color: var(--pink-accent);
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-size: 14px;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(176, 104, 115, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-club:hover {
+    transform: translateY(-2px);
 }

@@ -4,7 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Земляне — Виртуальная биологическая академия</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Встроенные стили, чтобы дизайн гарантированно применился сразу без ошибок путей */
+        :root {
+            --bg-color: #fcfbf9;
+            --mint-primary: #769e88;
+            --pink-accent: #b06873;
+            --text-dark: #3a4740;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Шапка */
+        .site-header-custom {
+            padding: 20px 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .main-nav-custom {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #8c9892;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: lowercase;
+            transition: color 0.3s;
+        }
+
+        .nav-btn.active {
+            background-color: var(--mint-primary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-transform: none;
+        }
+
+        .nav-btn.accent-lessons {
+            color: var(--pink-accent);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 17px;
+        }
+
+        .nav-btn:hover {
+            color: var(--text-dark);
+        }
+
+        /* Главный экран с фоном */
+        .hero-bg-section {
+            width: 100%;
+            min-height: 80vh;
+            background-image: url('fon.png');
+            background-size: cover;
+            background-position: left center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content-box {
+            margin-left: 52%;
+            padding: 40px;
+            max-width: 650px;
+        }
+
+        .main-title {
+            font-size: 82px;
+            font-family: serif;
+            color: var(--mint-primary);
+            font-weight: normal;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .main-subtitle {
+            font-size: 19px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .subtitle-line {
+            width: 110px;
+            height: 2px;
+            background-color: var(--pink-accent);
+            margin-bottom: 25px;
+        }
+
+        .hero-icons {
+            display: flex;
+            gap: 25px;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .action-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .animated-logo-container {
+            width: 85px;
+            height: 85px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dancing-logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .btn-club {
+            background-color: var(--pink-accent);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(176, 104, 115, 0.3);
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-club:hover {
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 

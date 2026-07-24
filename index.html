@@ -6,7 +6,6 @@
     <title>Земляне — Виртуальная биологическая академия</title>
     <style>
         :root {
-            --bg-color: #fcfbf9;
             --mint-primary: #769e88;
             --pink-accent: #b06873;
             --text-dark: #3a4740;
@@ -20,21 +19,34 @@
         }
 
         body {
-            background-color: var(--bg-color);
             color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        /* Шапка сайта: меню выровнено по центру */
-        .site-header-custom {
-            padding: 20px 40px;
+        /* Главный экран на всю высоту экрана с единым фоном */
+        .hero-bg-section {
+            width: 100%;
+            min-height: 100vh;
+            background-image: url('fon.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Распределяем шапку вверх, а контент вниз */
+            padding: 20px 40px 40px 40px;
             position: relative;
+        }
+
+        /* Шапка сайта поверх фона */
+        .site-header-custom {
+            width: 100%;
             z-index: 10;
         }
 
         .header-flex {
             display: flex;
-            justify-content: center; /* Центрируем меню в шапке */
+            justify-content: center;
         }
 
         .main-nav-custom {
@@ -45,7 +57,7 @@
 
         .nav-btn {
             text-decoration: none;
-            color: #8c9892;
+            color: #7c8882;
             font-size: 16px;
             font-weight: 500;
             text-transform: lowercase;
@@ -71,32 +83,18 @@
             color: var(--text-dark);
         }
 
-        /* Главный экран: фон .webp растянут на всю страницу */
-        .hero-bg-section {
-            width: 100%;
-            min-height: calc(100vh - 80px);
-            background-image: url('fon.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Выравниваем содержимое строго по центру экрана */
-        }
-
-        /* Контейнер текста по центру экрана */
+        /* Контейнер для текста, смещенный вправо */
         .hero-content-box {
-            text-align: center; /* Текст внутри выравнивается по центру */
-            max-width: 700px;
-            padding: 20px;
+            max-width: 650px;
+            margin-left: 45%; /* Сдвигаем весь блок правее */
+            margin-bottom: 40px;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Центрируем элементы внутри блока */
+            align-items: flex-start; /* Выравниваем всё по левому краю внутри блока */
         }
 
         .main-title {
-            font-size: 82px;
+            font-size: 72px;
             font-family: serif;
             color: var(--mint-primary);
             font-weight: normal;
@@ -105,7 +103,7 @@
         }
 
         .main-subtitle {
-            font-size: 19px;
+            font-size: 18px;
             color: #555;
             margin-bottom: 15px;
         }
@@ -121,20 +119,20 @@
             display: flex;
             gap: 25px;
             font-size: 24px;
-            margin-bottom: 30px;
-            justify-content: center;
+            margin-bottom: 35px;
         }
 
+        /* Строка с анимацией и кнопкой в правом нижнем углу */
         .action-card {
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 30px;
-            justify-content: center;
+            justify-content: space-between; /* Раскидываем анимацию и кнопку по краям */
         }
 
         .animated-logo-container {
-            width: 90px;
-            height: 90px;
+            width: 70px;
+            height: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -149,15 +147,14 @@
         .btn-club {
             background-color: var(--pink-accent);
             color: white;
-            padding: 15px 35px;
+            padding: 14px 30px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
             letter-spacing: 1px;
             box-shadow: 0 4px 10px rgba(176, 104, 115, 0.3);
             transition: transform 0.2s;
-            display: inline-block;
         }
 
         .btn-club:hover {
@@ -167,21 +164,22 @@
 </head>
 <body>
 
-    <!-- Шапка сайта -->
-    <header class="site-header-custom">
-        <div class="container header-flex">
-            <nav class="main-nav-custom">
-                <a href="index.html" class="nav-btn active">Главная</a>
-                <a href="about.html" class="nav-btn">о нас</a>
-                <a href="lessons/index.html" class="nav-btn accent-lessons">УРОКИ</a>
-                <a href="news/index.html" class="nav-btn">новости</a>
-                <a href="projects/index.html" class="nav-btn">достижения</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Главный экран -->
+    <!-- Главный экран, объединяющий фон, шапку и контент -->
     <section class="hero-bg-section">
+        <!-- Шапка сайта -->
+        <header class="site-header-custom">
+            <div class="header-flex">
+                <nav class="main-nav-custom">
+                    <a href="index.html" class="nav-btn active">Главная</a>
+                    <a href="about.html" class="nav-btn">о нас</a>
+                    <a href="lessons/index.html" class="nav-btn accent-lessons">УРОКИ</a>
+                    <a href="news/index.html" class="nav-btn">новости</a>
+                    <a href="projects/index.html" class="nav-btn">достижения</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Центральный контент -->
         <div class="hero-content-box">
             <h1 class="main-title">Земляне</h1>
             <p class="main-subtitle">Наша суперсила — в знаниях и их применении</p>
@@ -197,6 +195,7 @@
 
             <div class="action-card">
                 <div class="animated-logo-container">
+                    <!-- Убедитесь, что файл logoanime.mp4 загружен в корневую папку -->
                     <video src="logoanime.mp4" autoplay loop muted playsinline class="dancing-logo"></video>
                 </div>
                 <a href="earth-club/index.html" class="btn-club">ВСТУПИТЬ В КЛУБ</a>

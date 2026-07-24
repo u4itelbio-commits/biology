@@ -1,0 +1,205 @@
+/* Основные переменные и цвета вашего кабинета */
+:root {
+    --bg-color: #ffffff;
+    --mint-primary: #7bc4a5;
+    --mint-light: #eaf4f0;
+    --pink-accent: #d47a86;
+    --text-color: #2c3e50;
+    --gray-bg: #f8f9fa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка сайта */
+.site-header {
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--mint-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--mint-primary);
+}
+
+.search-box input {
+    padding: 8px 15px;
+    border: 1px solid var(--mint-primary);
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    width: 200px;
+}
+
+/* Первый экран (Hero) */
+.hero {
+    background-color: var(--mint-light);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.badge {
+    background-color: var(--pink-accent);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin: 20px 0;
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--pink-accent);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid var(--mint-primary);
+    color: var(--text-color);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Сетка разделов */
+.sections-grid {
+    padding: 60px 0;
+}
+
+.sections-grid h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--gray-bg);
+    border: 1px solid var(--mint-light);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    border-color: var(--mint-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(123, 196, 165, 0.2);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Подвал */
+.site-footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}

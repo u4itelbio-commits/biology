@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Земляне</title>
+    <title>Земляне — Виртуальная биологическая академия</title>
     <style>
         :root {
             --bg-color: #fcfbf9;
@@ -25,7 +25,7 @@
             overflow-x: hidden;
         }
 
-        /* Шапка */
+        /* Шапка сайта: меню выровнено по центру */
         .site-header-custom {
             padding: 20px 40px;
             position: relative;
@@ -34,7 +34,7 @@
 
         .header-flex {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center; /* Центрируем меню в шапке */
         }
 
         .main-nav-custom {
@@ -71,24 +71,28 @@
             color: var(--text-dark);
         }
 
-        /* ФОН НА ВСЮ СТРАНИЦУ: растягиваем на 100% ширины и высоты экрана */
+        /* Главный экран: фон .webp растянут на всю страницу */
         .hero-bg-section {
-            width: 100vw;
-            height: calc(100vh - 80px);
-            background-image: url('fon.jpg');
-            background-size: 100% 100%; /* Растягивает картинку точно на всю ширину и высоту */
+            width: 100%;
+            min-height: calc(100vh - 80px);
+            background-image: url('fon.webp');
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
             display: flex;
             align-items: center;
+            justify-content: center; /* Выравниваем содержимое строго по центру экрана */
         }
 
-        /* Контейнер текста аккуратно накладывается на правую белую часть */
+        /* Контейнер текста по центру экрана */
         .hero-content-box {
-            position: absolute;
-            right: 8%; /* Точная привязка к правой части */
-            max-width: 600px;
+            text-align: center; /* Текст внутри выравнивается по центру */
+            max-width: 700px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрируем элементы внутри блока */
         }
 
         .main-title {
@@ -98,7 +102,6 @@
             font-weight: normal;
             line-height: 1;
             margin-bottom: 10px;
-            margin-left: 30px;
         }
 
         .main-subtitle {
@@ -119,12 +122,14 @@
             gap: 25px;
             font-size: 24px;
             margin-bottom: 30px;
+            justify-content: center;
         }
 
         .action-card {
             display: flex;
             align-items: center;
             gap: 30px;
+            justify-content: center;
         }
 
         .animated-logo-container {
@@ -135,7 +140,6 @@
             align-items: center;
         }
 
-        /* Настройка видео-анимации */
         .dancing-logo {
             width: 100%;
             height: 100%;
@@ -193,7 +197,6 @@
 
             <div class="action-card">
                 <div class="animated-logo-container">
-                    <!-- Подключаем видеоформат .mp4 с автозапуском -->
                     <video src="logoanime.mp4" autoplay loop muted playsinline class="dancing-logo"></video>
                 </div>
                 <a href="earth-club/index.html" class="btn-club">ВСТУПИТЬ В КЛУБ</a>
